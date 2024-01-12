@@ -16,6 +16,13 @@ export class LibrosComponent implements OnInit {
     this.libros = this.librosService.obtenerLibros()
   }
 
-  getLibros(){}
+  eliminarLibro(lib:any){
+    this.libros = this.libros.filter( (p:any) => p !== lib)
+  }
 
+  guardarLibro(f:any){
+    if(f.valid){
+      this.libros.push(f.value.nombreLibro)
+    }
+  }
 }

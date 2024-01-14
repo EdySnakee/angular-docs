@@ -1,21 +1,49 @@
 <section>
-  <form>
+  <form fxLayoutGap="10px"  fxLayout="column" fxLayoutAlign="center center" #f="ngForm" (ngSubmit)="registrarUsuario(f)">
+
+    <mat-form-field>
+      <mat-label>Ingrese el nombre</mat-label>
+      <input type="text" ngModel name="nombre" required placeholder="Ingrese nombre" matInput />
+      <mat-error>Debe ingresar un nombre</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Ingrese apellido</mat-label>
+      <input type="text" ngModel name="apellido" required placeholder="Ingrese apellido" matInput />
+      <mat-error>Debe ingresar un apellido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Ingrese Username</mat-label>
+      <input type="text" ngModel name="username" required placeholder="User33" matInput />
+      <mat-error>Debe ingresar un username</mat-error>
+    </mat-form-field>
 
     <mat-form-field>
       <mat-label>Ingrese correo</mat-label>
-      <input type="email" matInput placeholder="correo@correo.com">
+      <input type="email" matInput placeholder="correo@correo.com" ngModel name="email" required email #emailInput="ngModel" />
+      <mat-error *ngIf="emailInput.hasError('required')" >El email no puede estar en blanco</mat-error>
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field hintLabel="El password debe tener 7 caracteres" >
       <mat-label>Ingrese password</mat-label>
-      <input type="password" matInput placeholder="contraseña">
+      <input
+      type="password" matInput placeholder="contraseña" ngModel name="password"
+      required
+      minlength="7"
+      />
+      <mat-error>Introduce más de 7 caracteres</mat-error>
     </mat-form-field>
 
+
+      <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid" >Enviar
+      <mat-icon>check_circle</mat-icon>
+    </button>
   </form>
 </section>
 
-<section id="contenedor">
+<!-- <section id="contenedor">
   <div id="ele_1" class="ele" ></div>
   <div id="ele_2" class="ele" ></div>
   <div id="ele_3" class="ele" ></div>
-</section>
+</section> -->

@@ -9,6 +9,9 @@ import { HomeComponent } from './vistas/home/home.component';
 import { LibrosService } from './services/libros.service';
 import { LibrosComponent } from './cursos/libros/libros.component';
 import { LibroComponent } from './cursos/libro/libro.component';
+import { InicioComponent } from './inicio.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MateriasModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -16,12 +19,15 @@ import { LibroComponent } from './cursos/libro/libro.component';
     ServiciosComponent,
     HomeComponent,
     LibrosComponent,
-    LibroComponent
+    LibroComponent,
+    InicioComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MateriasModule
   ],
   providers: [LibrosService],
   bootstrap: [AppComponent]

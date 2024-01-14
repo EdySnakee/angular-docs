@@ -12,6 +12,8 @@ import { LibroComponent } from './cursos/libro/libro.component';
 import { InicioComponent } from './inicio.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MateriasModule } from './material.module';
+import { RegistrarComponent } from './seguridad/registrar/registrar.component';
+import { LoginComponent } from './seguridad/login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { MateriasModule } from './material.module';
     LibrosComponent,
     LibroComponent,
     InicioComponent,
+    RegistrarComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
